@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kai's Skill Menu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column of three option panels, each a to-scale battle menu (two columns of cells, as in the game) with notes beside it; the chosen option is marked. */
+:root{
+  --bg:#eef0f3; --panel:#ffffff; --ink:#1c2230; --muted:#5b6475; --line:#c9cfda;
+  --cell:#f6f7fa; --cell-ink:#1c2230; --skill:#e7eefc; --skill-line:#9fb4e6;
+  --accent:#c2412d; --chosen:#1f7a55; --dim:#a7aebb;
+  --f-display:"Chakra Petch", "Segoe UI", sans-serif; --f-body:"IBM Plex Sans", "Segoe UI", sans-serif; --f-mono:"IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12151c; --panel:#1a1f29; --ink:#e7eaf0; --muted:#9aa3b5; --line:#2f3747;
+  --cell:#222937; --cell-ink:#e7eaf0; --skill:#1f2b44; --skill-line:#3d5590;
+  --accent:#e2674f; --chosen:#3fb184; --dim:#4f586a; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#12151c; --panel:#1a1f29; --ink:#e7eaf0; --muted:#9aa3b5; --line:#2f3747;
+  --cell:#222937; --cell-ink:#e7eaf0; --skill:#1f2b44; --skill-line:#3d5590;
+  --accent:#e2674f; --chosen:#3fb184; --dim:#4f586a; color-scheme:dark }
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:22px}
+h1{font-family:var(--f-display);font-weight:700;font-size:30px;margin:0;text-wrap:balance;letter-spacing:.01em}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+.opt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px}
+.opt.chosen{border:2px solid var(--chosen)}
+@media (max-width:760px){.opt{grid-template-columns:minmax(0,1fr)}}
+.opt h2{font-family:var(--f-display);font-weight:600;font-size:21px;margin:0 0 4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.tag.yes{border-color:var(--chosen);color:var(--chosen)}
+.menu-cap{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin:0 0 6px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-family:var(--f-mono);font-size:13px}
+.menu.c{grid-template-columns:1fr 1fr 44px}
+.cell{background:var(--cell);color:var(--cell-ink);border:1px solid var(--line);border-radius:4px;padding:7px 8px;min-width:0;overflow-wrap:anywhere}
+.cell.sk{background:var(--skill);border-color:var(--skill-line)}
+.cell.new{outline:2px dashed var(--accent);outline-offset:-3px}
+.cell.empty{color:var(--dim)}
+.cell.wide{grid-column:1/-1}
+.pagetag{background:var(--skill);border:1px solid var(--accent);border-radius:4px;display:grid;place-items:center;font-weight:600;color:var(--accent);grid-row:span 2}
+.k{font-weight:600}
+.list{margin-top:8px;border:1px solid var(--skill-line);border-radius:4px;background:var(--skill);font-family:var(--f-mono);font-size:13px;padding:6px 8px;display:grid;gap:2px}
+.list .hl{color:var(--accent);font-weight:600}
+.notes{min-width:0}
+.notes ul{margin:8px 0 0;padding-left:18px;display:grid;gap:6px}
+.notes b{font-weight:600}
+.pages{display:grid;gap:12px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-display);font-weight:600}
+td.c-col,th.c-col{background:color-mix(in srgb,var(--chosen) 12%,transparent)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.q h2{font-family:var(--f-display);font-size:20px;margin:0 0 6px}
+.q ol{margin:6px 0 0;padding-left:20px;display:grid;gap:8px}
+.foot{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Kai's skill menu with five skills</h1>
+    <p class="lede">A unique hero uses every skill they have unlocked (your decision D-430), but today's battle menu has room for four. Kai will have five: Prize Hook, One-Two, Call Out, Next Challenger and Call the Round. Below are the three ways to show them, drawn at Normal text size. You chose <b>option C, skill pages</b> (D-451). Heroes with four skills or fewer see today's menu in all three.</p>
+  </header>
+
+  <section class="opt">
+    <div>
+      <p class="menu-cap">A · Kai, 5 skills</p>
+      <div class="menu">
+        <div class="cell"><span class="k">1</span> Move</div><div class="cell"><span class="k">2</span> Attack</div>
+        <div class="cell"><span class="k">3</span> Guard · 1 AP</div><div class="cell"><span class="k">4</span> Overwatch · 2 AP</div>
+        <div class="cell sk"><span class="k">5</span> Prize Hook · 2 AP</div><div class="cell sk"><span class="k">6</span> One-Two · 2 AP</div>
+        <div class="cell sk"><span class="k">7</span> Call Out · 1 AP</div><div class="cell sk new"><span class="k">8</span> More skills (2) ›</div>
+        <div class="cell"><span class="k">9</span> Items (3)</div><div class="cell"><span class="k">Z</span> Undo</div>
+        <div class="cell wide"><span class="k">0</span> End turn</div>
+      </div>
+      <div class="list" aria-label="The list that 8 opens">
+        <div>All skills (5) · Esc / B: back</div>
+        <div>1 Prize Hook · 2 AP</div><div>2 One-Two · 2 AP</div><div>3 Call Out · 1 AP</div>
+        <div class="hl">4 › Next Challenger · 3 AP</div><div>5 Call the Round · 4 AP</div>
+      </div>
+    </div>
+    <div class="notes">
+      <h2>A · A "More skills" button</h2>
+      <ul>
+        <li><b>Reaching a skill:</b> skills 1–3 with one key (5, 6, 7); skills 4 and up: press 8, then pick from the list.</li>
+        <li><b>Fits the largest text size:</b> yes.</li>
+        <li><b>Cost:</b> small to medium (reuses the Items list).</li>
+        <li><b>Downside:</b> the 4th and 5th skills take two presses.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="opt">
+    <div>
+      <p class="menu-cap">B · Kai, 5 skills</p>
+      <div class="menu">
+        <div class="cell"><span class="k">1</span> Move</div><div class="cell"><span class="k">2</span> Attack</div>
+        <div class="cell"><span class="k">3</span> Guard · 1 AP</div><div class="cell"><span class="k">4</span> Overwatch · 2 AP</div>
+        <div class="cell sk"><span class="k">5</span> Prize Hook · 2 AP</div><div class="cell sk"><span class="k">6</span> One-Two · 2 AP</div>
+        <div class="cell sk"><span class="k">7</span> Call Out · 1 AP</div><div class="cell sk"><span class="k">8</span> Next Challenger · 3 AP</div>
+        <div class="cell sk new"><span class="k">Sh+5</span> Call the Round · 4 AP</div><div class="cell empty new">(empty)</div>
+        <div class="cell"><span class="k">9</span> Items (3)</div><div class="cell"><span class="k">Z</span> Undo</div>
+        <div class="cell wide"><span class="k">0</span> End turn</div>
+      </div>
+    </div>
+    <div class="notes">
+      <h2>B · A second row of skills</h2>
+      <ul>
+        <li><b>Reaching a skill:</b> skills 1–4 with keys 5–8; skills 5–8 need Shift plus a number.</li>
+        <li><b>Fits the largest text size:</b> no. The menu would cover the unit's stats or the forecast.</li>
+        <li><b>Cost:</b> medium to large.</li>
+        <li><b>Downside:</b> clumsy keys, and it doesn't fit at large text.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="opt chosen">
+    <div class="pages">
+      <div>
+        <p class="menu-cap">C · Kai, page 1 of 2</p>
+        <div class="menu c">
+          <div class="cell"><span class="k">1</span> Move</div><div class="cell"><span class="k">2</span> Attack</div><div></div>
+          <div class="cell"><span class="k">3</span> Guard · 1 AP</div><div class="cell"><span class="k">4</span> Overwatch · 2 AP</div><div></div>
+          <div class="cell sk"><span class="k">5</span> Prize Hook · 2 AP</div><div class="cell sk"><span class="k">6</span> One-Two · 2 AP</div><div class="pagetag">1/2<br>›</div>
+          <div class="cell sk"><span class="k">7</span> Call Out · 1 AP</div><div class="cell sk"><span class="k">8</span> Next Challenger · 3 AP</div>
+          <div class="cell"><span class="k">9</span> Items (3)</div><div class="cell"><span class="k">Z</span> Undo</div><div></div>
+          <div class="cell wide"><span class="k">0</span> End turn</div>
+        </div>
+      </div>
+      <div>
+        <p class="menu-cap">C · Kai, page 2 of 2 (after the tag or Page Down)</p>
+        <div class="menu c">
+          <div class="cell sk new"><span class="k">5</span> Call the Round · 4 AP</div><div class="cell empty">6 (empty)</div><div class="pagetag">2/2<br>‹</div>
+          <div class="cell empty">7 (empty)</div><div class="cell empty">8 (empty)</div>
+        </div>
+      </div>
+    </div>
+    <div class="notes">
+      <h2>C · Skill pages <span class="tag yes">Your choice · D-451</span></h2>
+      <ul>
+        <li><b>Reaching a skill:</b> skills 1–4 with keys 5–8; skill 5 and up: flip the page (Page Down, the right stick, or the small "1/2 ›" tag), then 5–8 again.</li>
+        <li><b>Fits the largest text size:</b> yes. The tag takes a narrow strip on the right, so a few longer names wrap to two lines.</li>
+        <li><b>Cost:</b> medium (the page number, the tag, the flip key, and what a number key means after a flip).</li>
+        <li><b>Watch for:</b> the same key means a different skill on each page (5 is Prize Hook on page 1 and Call the Round on page 2). The follow-up questions below help with that.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th></th><th>A · More skills list</th><th>B · Second row</th><th class="c-col">C · Pages</th></tr></thead>
+      <tbody>
+        <tr><td>Heroes with 4 skills or fewer</td><td>unchanged</td><td>unchanged</td><td class="c-col">unchanged</td></tr>
+        <tr><td>Kai's skills 1–3</td><td>1 key</td><td>1 key</td><td class="c-col">1 key</td></tr>
+        <tr><td>Kai's skills 4 and 5</td><td>2 presses</td><td>1 key (5th: Shift+5)</td><td class="c-col">4th: 1 key · 5th: 2 presses</td></tr>
+        <tr><td>Fits the largest text</td><td>yes</td><td>no</td><td class="c-col">yes</td></tr>
+        <tr><td>Heroes with 9+ skills later</td><td>scroll the list</td><td>no room</td><td class="c-col">more pages</td></tr>
+        <tr><td>Cost</td><td>small to medium</td><td>medium to large</td><td class="c-col">medium</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="q">
+    <h2>Three small choices for option C</h2>
+    <ol>
+      <li><b>Flipping pages.</b> (a) Page Down or Tab on the keyboard, the right stick or shoulder buttons on a controller, and clicking the tag (recommended). (b) Only the tag. (c) Your own words.</li>
+      <li><b>Which skills are on page 1.</b> (a) You arrange them on the team screen; new skills go to the end (recommended). (b) In the order they were unlocked, fixed. (c) The most used come first automatically.</li>
+      <li><b>Remembering the page.</b> (a) Each hero opens on page 1 at the start of their turn (recommended: the same keys always start in the same place). (b) Each hero stays on the page they last used.</li>
+    </ol>
+  </section>
+
+  <p class="foot">Drawn from the game's real battle menu at Normal text size (docs/playtest/SKILLMENU_MOCKUPS.md). Dashed outlines mark what each option adds. Answers go in chat.</p>
+</div>
+</body>
+</html>

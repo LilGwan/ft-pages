@@ -1,0 +1,146 @@
+<title>Fundamentals Tactics Screens</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one column of full-width shots on a phone, two on a wide screen; each shot sits on the game's own dark board colour. */
+:root {
+  color-scheme: dark;
+  --ground: #14161c;
+  --panel: #1d2029;
+  --line: #2e3340;
+  --ink: #e9ecf3;
+  --soft: #a3aabb;
+  --turn: #f2d24b;      /* the game's "your turn" yellow */
+  --ally: #58b6ff;      /* the game's ally blue */
+  --display: "Chakra Petch", "Trebuchet MS", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+}
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-inline: 16px;
+  padding-block: 28px 48px;
+}
+.wrap { max-width: 1180px; margin-inline: auto; display: grid; gap: 28px; }
+header { display: grid; gap: 10px; }
+h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 span { color: var(--turn); }
+.lede { color: var(--soft); max-width: 62ch; margin: 0; }
+.note {
+  border-left: 3px solid var(--ally);
+  padding: 2px 0 2px 12px;
+  color: var(--soft);
+  max-width: 62ch;
+  margin: 0;
+  font-size: 0.95rem;
+}
+h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--turn);
+  margin: 12px 0 0;
+}
+.grid { display: grid; gap: 22px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+figure a { display: block; border: 1px solid var(--line); background: var(--panel); }
+figure a:focus-visible { outline: 2px solid var(--turn); outline-offset: 2px; }
+figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+figcaption { color: var(--soft); font-size: 0.95rem; }
+figcaption b { color: var(--ink); font-weight: 700; }
+footer { color: var(--soft); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Fundamentals <span>Tactics</span></h1>
+    <p class="lede">40 screens from the work-in-progress build of 12 October 2026 (evening): a turn-based tactics game set in The Fundamentals universe.</p>
+    <p class="note">Every character and tile here is a stand-in shape, and text marked [P] is placeholder writing. The art comes later; what you are looking at is the game underneath it. Tap a picture to open it full size.</p>
+  </header>
+
+  <h2>Starting out</h2>
+  <div class="grid">
+    <figure><a href="img/01.png"><img src="img/01.png" alt="The title screen" loading="lazy"></a><figcaption><b>The title screen.</b> New game, continue, load, options.</figcaption></figure>
+    <figure><a href="img/02.png"><img src="img/02.png" alt="The new game screen with difficulty and defeat rules" loading="lazy"></a><figcaption><b>A new game.</b> Campaign difficulty, what happens when a hero falls, and how much damage varies.</figcaption></figure>
+  </div>
+
+  <h2>The district</h2>
+  <div class="grid">
+    <figure><a href="img/03.png"><img src="img/03.png" alt="The district hub seen from above" loading="lazy"></a><figcaption><b>The district hub.</b> You walk the party around, talk to people and pick up work.</figcaption></figure>
+    <figure><a href="img/04.png"><img src="img/04.png" alt="The lantern market with a shopkeeper and people to meet" loading="lazy"></a><figcaption><b>The market.</b> A shopkeeper, a rival to meet, and trouble waiting by the crates.</figcaption></figure>
+    <figure><a href="img/05.png"><img src="img/05.png" alt="The warehouse area" loading="lazy"></a><figcaption><b>The warehouse.</b> Where the first job leads.</figcaption></figure>
+    <figure><a href="img/06.png"><img src="img/06.png" alt="A line of dialogue with a speaker portrait" loading="lazy"></a><figcaption><b>Talking.</b> One speaker at a time, with a portrait slot for the art to come.</figcaption></figure>
+    <figure><a href="img/07.png"><img src="img/07.png" alt="Dialogue with four numbered choices, one locked" loading="lazy"></a><figcaption><b>Choices.</b> A locked choice says why it is locked.</figcaption></figure>
+    <figure><a href="img/08.png"><img src="img/08.png" alt="The weapon shop list" loading="lazy"></a><figcaption><b>The shop.</b> Each item says what it does and who can use it.</figcaption></figure>
+    <figure><a href="img/09.png"><img src="img/09.png" alt="The quest log" loading="lazy"></a><figcaption><b>The quest log.</b> What you have been asked to do and how far along it is.</figcaption></figure>
+    <figure><a href="img/10.png"><img src="img/10.png" alt="The inventory screen" loading="lazy"></a><figcaption><b>Inventory.</b> Everything the party is carrying.</figcaption></figure>
+    <figure><a href="img/11.png"><img src="img/11.png" alt="Choosing equipment for a hero" loading="lazy"></a><figcaption><b>Equipping.</b> Swap gear and see what changes.</figcaption></figure>
+    <figure><a href="img/12.png"><img src="img/12.png" alt="The character screen with stats and growth" loading="lazy"></a><figcaption><b>The character screen.</b> Stats, gear, traits and how a hero is growing.</figcaption></figure>
+  </div>
+
+  <h2>Before the fight</h2>
+  <div class="grid">
+    <figure><a href="img/13.png"><img src="img/13.png" alt="The party picker with hero cards" loading="lazy"></a><figcaption><b>Pick your team.</b> Each card now says in words what every skill does.</figcaption></figure>
+    <figure><a href="img/14.png"><img src="img/14.png" alt="The party picker inside the story campaign" loading="lazy"></a><figcaption><b>In the story.</b> The same screen inside the campaign, with levels and equipment.</figcaption></figure>
+    <figure><a href="img/15.png"><img src="img/15.png" alt="The fight tier chooser" loading="lazy"></a><figcaption><b>Choose how hard.</b> Rookie, Regular, Veteran or Elite for each fight, with what changes.</figcaption></figure>
+    <figure><a href="img/16.png"><img src="img/16.png" alt="The skirmish setup screen" loading="lazy"></a><figcaption><b>Skirmish.</b> Set up a one-off fight on any map.</figcaption></figure>
+  </div>
+
+  <h2>A turn</h2>
+  <div class="grid">
+    <figure><a href="img/17.png"><img src="img/17.png" alt="The battle board at the start of round one" loading="lazy"></a><figcaption><b>Round one.</b> The board, the turn order along the top, and the active hero on the right.</figcaption></figure>
+    <figure><a href="img/18.png"><img src="img/18.png" alt="Tiles a hero can move to, highlighted" loading="lazy"></a><figcaption><b>Where can I go?</b> Every tile in reach lights up.</figcaption></figure>
+    <figure><a href="img/19.png"><img src="img/19.png" alt="Targets for Jade's throw" loading="lazy"></a><figcaption><b>Jade's throw.</b> First pick who to launch.</figcaption></figure>
+    <figure><a href="img/20.png"><img src="img/20.png" alt="Landing tiles for the throw" loading="lazy"></a><figcaption><b>Then where they land.</b> Into a wall, into water, or into another enemy.</figcaption></figure>
+    <figure><a href="img/21.png"><img src="img/21.png" alt="The board after a slam" loading="lazy"></a><figcaption><b>After the slam.</b> Damage, a mark on the target, and the log line that says what happened.</figcaption></figure>
+    <figure><a href="img/22.png"><img src="img/22.png" alt="Using a healing item on an ally" loading="lazy"></a><figcaption><b>Using an item.</b> The card says exactly what it will do before you commit.</figcaption></figure>
+    <figure><a href="img/23.png"><img src="img/23.png" alt="The Overwatch choice in the action list" loading="lazy"></a><figcaption><b>Overwatch.</b> Hold your turn and fire at whatever walks into view.</figcaption></figure>
+    <figure><a href="img/24.png"><img src="img/24.png" alt="A hero with Overwatch armed and the tiles it covers" loading="lazy"></a><figcaption><b>Overwatch armed.</b> The covered tiles are drawn on the board.</figcaption></figure>
+    <figure><a href="img/25.png"><img src="img/25.png" alt="Floating damage words over units" loading="lazy"></a><figcaption><b>Feedback.</b> Floating words for hits, misses and effects.</figcaption></figure>
+  </div>
+
+  <h2>Reading the board</h2>
+  <div class="grid">
+    <figure><a href="img/26.png"><img src="img/26.png" alt="The forecast card before an attack" loading="lazy"></a><figcaption><b>The forecast.</b> Chance to land, the damage range and whether it finishes the target.</figcaption></figure>
+    <figure><a href="img/27.png"><img src="img/27.png" alt="The details view while aiming" loading="lazy"></a><figcaption><b>Details.</b> Everything known about the target while you aim.</figcaption></figure>
+    <figure><a href="img/28.png"><img src="img/28.png" alt="Board marks for move, attack and danger" loading="lazy"></a><figcaption><b>Marks.</b> Move, target and danger tiles drawn together.</figcaption></figure>
+    <figure><a href="img/29.png"><img src="img/29.png" alt="The threat view showing where enemies can reach" loading="lazy"></a><figcaption><b>Threat view.</b> Where every enemy can reach next turn.</figcaption></figure>
+    <figure><a href="img/30.png"><img src="img/30.png" alt="The level view of a map with three heights" loading="lazy"></a><figcaption><b>High ground.</b> The level view shows one height of the map at a time.</figcaption></figure>
+    <figure><a href="img/31.png"><img src="img/31.png" alt="A forecast against an enemy nobody has scouted" loading="lazy"></a><figcaption><b>The unknown.</b> Until an enemy is scouted, its numbers are shown as a guess.</figcaption></figure>
+  </div>
+
+  <h2>Maps and powers</h2>
+  <div class="grid">
+    <figure><a href="img/32.png"><img src="img/32.png" alt="A fight in the ruins map" loading="lazy"></a><figcaption><b>The ruins.</b> Broken walls and hazards to push people into.</figcaption></figure>
+    <figure><a href="img/33.png"><img src="img/33.png" alt="A larger sixteen by twelve battle map" loading="lazy"></a><figcaption><b>A bigger board.</b> Sixteen by twelve, with more enemies.</figcaption></figure>
+    <figure><a href="img/34.png"><img src="img/34.png" alt="Leon's Denial field switched on" loading="lazy"></a><figcaption><b>Leon's Denial.</b> A field around him where powers stop working.</figcaption></figure>
+    <figure><a href="img/35.png"><img src="img/35.png" alt="A hero in the Unsealed state" loading="lazy"></a><figcaption><b>Unsealed.</b> A one-time surge of strength that costs the ability to Guard.</figcaption></figure>
+  </div>
+
+  <h2>After the fight</h2>
+  <div class="grid">
+    <figure><a href="img/36.png"><img src="img/36.png" alt="The victory screen with experience, rewards and injuries" loading="lazy"></a><figcaption><b>Victory.</b> Experience, rewards, and who was hurt or has recovered.</figcaption></figure>
+    <figure><a href="img/37.png"><img src="img/37.png" alt="The results screen with a level-up" loading="lazy"></a><figcaption><b>Level up.</b> Each stat gain, with a mark when it was more or less than usual.</figcaption></figure>
+    <figure><a href="img/38.png"><img src="img/38.png" alt="The character screen with a growth hint" loading="lazy"></a><figcaption><b>Growth.</b> A line on how a hero's growth is running.</figcaption></figure>
+  </div>
+
+  <h2>Help and settings</h2>
+  <div class="grid">
+    <figure><a href="img/39.png"><img src="img/39.png" alt="The controls screen" loading="lazy"></a><figcaption><b>Controls.</b> Keyboard, mouse and controller for every command.</figcaption></figure>
+    <figure><a href="img/40.png"><img src="img/40.png" alt="The options screen" loading="lazy"></a><figcaption><b>Options.</b> Text size, difficulty, speed and accessibility settings.</figcaption></figure>
+  </div>
+
+  <footer>Fundamentals Tactics, Stage 3 build. Stand-in art and placeholder text throughout.</footer>
+</div>
