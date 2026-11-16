@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fight sequence: storyboard and animation (work in progress)</title>
+<style>
+:root{--bg:#f6f6f8;--fg:#1c1c22;--mut:#5d5d6a;--card:#ffffff;--bd:#d8d8e0;--acc:#1f4fd8;--chip:#eceef6}
+@media (prefers-color-scheme:dark){:root{--bg:#111215;--fg:#e9e9ef;--mut:#a3a3b2;--card:#1b1c21;--bd:#33353d;--acc:#8aaaff;--chip:#272a35}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow-wrap:anywhere}
+main{max-width:980px;margin:0 auto;padding:16px 16px 48px}
+h1{font-size:1.45rem;line-height:1.25;margin:.4rem 0 .5rem}
+h2{font-size:1.15rem;margin:2rem 0 .5rem;color:var(--acc)}
+p{margin:.4rem 0}
+.lead{font-size:1.02rem}
+.mut{color:var(--mut);font-size:.92rem}
+video,.sheet{display:block;width:100%;height:auto;border-radius:8px;background:#000}
+.vs{max-width:540px;margin:0 auto}
+.sheet{border:1px solid var(--bd)}
+ul.grid{list-style:none;margin:.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:640px){ul.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.card img{display:block;width:100%;height:auto;background:#000}
+.meta{padding:8px 10px 10px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.row strong{font-size:.95rem}
+.len{font-size:.8rem;font-weight:600;background:var(--chip);border-radius:9px;padding:0 8px;white-space:nowrap}
+.card p{font-size:.84rem;line-height:1.4;margin:.3rem 0 0}
+.card p.at{color:var(--mut);font-size:.75rem;margin-top:.4rem}
+.flash{border-style:dashed}
+.flash .row strong{color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<h1>Fight sequence: storyboard and animation (work in progress)</h1>
+<p class="lead">Our own 3D animation made in Blender: a 40-second fight between two original characters, Matter and Energy, at an early draft stage.</p>
+
+<h2>Current animation</h2>
+<video controls playsinline preload="metadata" poster="img/poster_v2.jpg" src="media/v2.mp4">Your browser cannot play this video.</video>
+<p class="mut">40 seconds. At this stage the lighting and textures are rough placeholders. The part to judge is the direction: the story of the fight, the camera angles and the timing.</p>
+
+<h2>Storyboard for the current animation</h2>
+<p class="mut">37 panels in order, one per shot, each with its length in seconds. The very short graphic flashes that punctuate the big hits are shown as impact flashes.</p>
+<ul class="grid">
+<li class="card"><img src="img/shot_01.jpg" width="640" height="341" loading="lazy" alt="Shot 1"><div class="meta"><div class="row"><strong>Shot 1</strong><span class="len">1.5 s</span></div><p>From a rooftop, Energy tips off the edge and drops toward Matter, who is walking down an empty street and has no idea she is there.</p><p class="at">starts at 0.0 s</p></div></li>
+<li class="card"><img src="img/shot_02.jpg" width="640" height="341" loading="lazy" alt="Shot 2"><div class="meta"><div class="row"><strong>Shot 2</strong><span class="len">2.0 s</span></div><p>Matter stays calm as she falls. A slab of street rises up over him like an umbrella, and her heel blade strikes it.</p><p class="at">starts at 1.5 s</p></div></li>
+<li class="card flash"><img src="img/shot_x1.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 2 and Shot 3)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.1 s</span></div><p>A quick graphic flash as her blade hits the stone.</p><p class="at">between Shot 2 and Shot 3 &middot; starts at 3.5 s</p></div></li>
+<li class="card"><img src="img/shot_03.jpg" width="640" height="341" loading="lazy" alt="Shot 3"><div class="meta"><div class="row"><strong>Shot 3</strong><span class="len">1.0 s</span></div><p>Her blade smashes through the slab and it bursts into chunks around him. She flips away over the rubble.</p><p class="at">starts at 3.6 s</p></div></li>
+<li class="card"><img src="img/shot_04.jpg" width="640" height="341" loading="lazy" alt="Shot 4"><div class="meta"><div class="row"><strong>Shot 4</strong><span class="len">0.8 s</span></div><p>Chips of stone rain down. He never looks up, and he grins.</p><p class="at">starts at 4.6 s</p></div></li>
+<li class="card"><img src="img/shot_05.jpg" width="640" height="341" loading="lazy" alt="Shot 5"><div class="meta"><div class="row"><strong>Shot 5</strong><span class="len">0.6 s</span></div><p>Energy lands in a skid, sparks flying, and rises into a fighting stance.</p><p class="at">starts at 5.4 s</p></div></li>
+<li class="card"><img src="img/shot_06.jpg" width="640" height="341" loading="lazy" alt="Shot 6"><div class="meta"><div class="row"><strong>Shot 6</strong><span class="len">0.7 s</span></div><p>She circles and fires four quick bolts. The street swallows every one.</p><p class="at">starts at 6.0 s</p></div></li>
+<li class="card"><img src="img/shot_07.jpg" width="640" height="341" loading="lazy" alt="Shot 7"><div class="meta"><div class="row"><strong>Shot 7</strong><span class="len">0.9 s</span></div><p>Stone shutters ripple along the street like a wave and catch three more bolts.</p><p class="at">starts at 6.7 s</p></div></li>
+<li class="card"><img src="img/shot_08.jpg" width="640" height="341" loading="lazy" alt="Shot 8"><div class="meta"><div class="row"><strong>Shot 8</strong><span class="len">4.6 s</span></div><p>Matter flicks a finger and stone pillars punch up one after another along her route, closing in faster and faster. The last one bursts up under her; she turns and slaps her palm on it, and everything freezes.</p><p class="at">starts at 7.6 s</p></div></li>
+<li class="card flash"><img src="img/shot_x2.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 8 and Shot 9)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.1 s</span></div><p>A flash as her palm touches the pillar.</p><p class="at">between Shot 8 and Shot 9 &middot; starts at 12.2 s</p></div></li>
+<li class="card"><img src="img/shot_09.jpg" width="640" height="341" loading="lazy" alt="Shot 9"><div class="meta"><div class="row"><strong>Shot 9</strong><span class="len">0.7 s</span></div><p>Streams of gold light drain out of the stone into her arm. She is stealing its motion.</p><p class="at">starts at 12.3 s</p></div></li>
+<li class="card"><img src="img/shot_10.jpg" width="640" height="341" loading="lazy" alt="Shot 10"><div class="meta"><div class="row"><strong>Shot 10</strong><span class="len">2.0 s</span></div><p>She shoves, and the whole chain of pillars flies back the way it came and batters Matter. He blocks with his forearm.</p><p class="at">starts at 12.9 s</p></div></li>
+<li class="card flash"><img src="img/shot_x3.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 10 and Shot 11)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.1 s</span></div><p>A flash as his forearm takes the hit.</p><p class="at">between Shot 10 and Shot 11 &middot; starts at 14.9 s</p></div></li>
+<li class="card"><img src="img/shot_11.jpg" width="640" height="341" loading="lazy" alt="Shot 11"><div class="meta"><div class="row"><strong>Shot 11</strong><span class="len">1.3 s</span></div><p>Rubble bounces off him. He laughs, head thrown back, and brushes the dust off his arm.</p><p class="at">starts at 15.0 s</p></div></li>
+<li class="card"><img src="img/shot_12.jpg" width="640" height="341" loading="lazy" alt="Shot 12"><div class="meta"><div class="row"><strong>Shot 12</strong><span class="len">0.3 s</span></div><p>She breathes out, her glow dims and her eyes narrow.</p><p class="at">starts at 16.3 s</p></div></li>
+<li class="card"><img src="img/shot_13.jpg" width="640" height="341" loading="lazy" alt="Shot 13"><div class="meta"><div class="row"><strong>Shot 13</strong><span class="len">0.5 s</span></div><p>Matter holds out an open hand. A crack runs across the front of a building.</p><p class="at">starts at 16.7 s</p></div></li>
+<li class="card"><img src="img/shot_14.jpg" width="640" height="341" loading="lazy" alt="Shot 14"><div class="meta"><div class="row"><strong>Shot 14</strong><span class="len">1.8 s</span></div><p>He tears the whole front off the building and swings it down at her. She turns and braces with both palms up.</p><p class="at">starts at 17.2 s</p></div></li>
+<li class="card flash"><img src="img/shot_x4.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 14 and Shot 15)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.3 s</span></div><p>A rapid run of flashes as her palms meet the falling stone.</p><p class="at">between Shot 14 and Shot 15 &middot; starts at 19.0 s</p></div></li>
+<li class="card"><img src="img/shot_15.jpg" width="640" height="341" loading="lazy" alt="Shot 15"><div class="meta"><div class="row"><strong>Shot 15</strong><span class="len">1.3 s</span></div><p>She stops the huge slab dead with her hands, and its energy pours into her as gold light.</p><p class="at">starts at 19.3 s</p></div></li>
+<li class="card"><img src="img/shot_16.jpg" width="640" height="341" loading="lazy" alt="Shot 16"><div class="meta"><div class="row"><strong>Shot 16</strong><span class="len">0.5 s</span></div><p>It is too much. It hurts.</p><p class="at">starts at 20.5 s</p></div></li>
+<li class="card"><img src="img/shot_17.jpg" width="640" height="341" loading="lazy" alt="Shot 17"><div class="meta"><div class="row"><strong>Shot 17</strong><span class="len">1.5 s</span></div><p>The slab crumbles to dust as she lets go. She spins and fires one broad beam; he raises a stone wall, but the beam punches through and hits his chest.</p><p class="at">starts at 21.0 s</p></div></li>
+<li class="card flash"><img src="img/shot_x5.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 17 and Shot 18)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.3 s</span></div><p>Flashes as the beam lands on the scar on his chest.</p><p class="at">between Shot 17 and Shot 18 &middot; starts at 22.5 s</p></div></li>
+<li class="card"><img src="img/shot_18.jpg" width="640" height="341" loading="lazy" alt="Shot 18"><div class="meta"><div class="row"><strong>Shot 18</strong><span class="len">2.2 s</span></div><p>Silence and smoke. The grin leaves his face, his brow comes down, and he looks up at her.</p><p class="at">starts at 22.8 s</p></div></li>
+<li class="card"><img src="img/shot_19.jpg" width="640" height="341" loading="lazy" alt="Shot 19"><div class="meta"><div class="row"><strong>Shot 19</strong><span class="len">1.8 s</span></div><p>Now he is serious. Matter walks toward her; every step cracks the street and walls rise beside him. Her bolt bursts harmlessly on a wall.</p><p class="at">starts at 25.0 s</p></div></li>
+<li class="card"><img src="img/shot_20.jpg" width="640" height="341" loading="lazy" alt="Shot 20"><div class="meta"><div class="row"><strong>Shot 20</strong><span class="len">4.2 s</span></div><p>She keeps firing, but her bolts splash and do nothing. Her glow fades and the light dims as the walls close in.</p><p class="at">starts at 26.8 s</p></div></li>
+<li class="card"><img src="img/shot_21.jpg" width="640" height="341" loading="lazy" alt="Shot 21"><div class="meta"><div class="row"><strong>Shot 21</strong><span class="len">0.4 s</span></div><p>She looks up at the top of the tallest wall. She has made a decision.</p><p class="at">starts at 31.0 s</p></div></li>
+<li class="card"><img src="img/shot_22.jpg" width="640" height="341" loading="lazy" alt="Shot 22"><div class="meta"><div class="row"><strong>Shot 22</strong><span class="len">1.5 s</span></div><p>She blasts the top off the tallest wall. It falls straight down at her, and she catches it overhead and stops it dead.</p><p class="at">starts at 31.4 s</p></div></li>
+<li class="card flash"><img src="img/shot_x6.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 22 and Shot 23)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.3 s</span></div><p>Flashes as the slab bursts into light.</p><p class="at">between Shot 22 and Shot 23 &middot; starts at 32.9 s</p></div></li>
+<li class="card"><img src="img/shot_23.jpg" width="640" height="341" loading="lazy" alt="Shot 23"><div class="meta"><div class="row"><strong>Shot 23</strong><span class="len">0.9 s</span></div><p>The slab bursts in a thunderclap of light and blasts the ring of walls outward. She rockets straight at him, heel blade first.</p><p class="at">starts at 33.2 s</p></div></li>
+<li class="card"><img src="img/shot_24.jpg" width="640" height="341" loading="lazy" alt="Shot 24"><div class="meta"><div class="row"><strong>Shot 24</strong><span class="len">0.5 s</span></div><p>Quick cuts, closer each time: his eyes, her eyes, the blade coming.</p><p class="at">starts at 34.1 s</p></div></li>
+<li class="card"><img src="img/shot_25.jpg" width="640" height="341" loading="lazy" alt="Shot 25"><div class="meta"><div class="row"><strong>Shot 25</strong><span class="len">1.3 s</span></div><p>His bare palm meets her blade and the metal crumples under his fingers. Her hands are on his chest, ready to unleash her blast.</p><p class="at">starts at 34.6 s</p></div></li>
+<li class="card flash"><img src="img/shot_x7.jpg" width="640" height="341" loading="lazy" alt="Impact flash (between Shot 25 and Shot 26)"><div class="meta"><div class="row"><strong>Impact flash</strong><span class="len">0.5 s</span></div><p>A white-out: both figures in silhouette as the blast goes off.</p><p class="at">between Shot 25 and Shot 26 &middot; starts at 35.9 s</p></div></li>
+<li class="card"><img src="img/shot_26.jpg" width="640" height="341" loading="lazy" alt="Shot 26"><div class="meta"><div class="row"><strong>Shot 26</strong><span class="len">0.3 s</span></div><p>The blast dome. Both are flung apart.</p><p class="at">starts at 36.4 s</p></div></li>
+<li class="card"><img src="img/shot_27.jpg" width="640" height="341" loading="lazy" alt="Shot 27"><div class="meta"><div class="row"><strong>Shot 27</strong><span class="len">1.0 s</span></div><p>Both skid across the street and stop.</p><p class="at">starts at 36.8 s</p></div></li>
+<li class="card"><img src="img/shot_28.jpg" width="640" height="341" loading="lazy" alt="Shot 28"><div class="meta"><div class="row"><strong>Shot 28</strong><span class="len">0.7 s</span></div><p>Her hands are smoking. She looks at her bent blade, then looks up.</p><p class="at">starts at 37.8 s</p></div></li>
+<li class="card"><img src="img/shot_29.jpg" width="640" height="341" loading="lazy" alt="Shot 29"><div class="meta"><div class="row"><strong>Shot 29</strong><span class="len">0.5 s</span></div><p>The scar on his chest is smoking and has reopened. He gives a slow grin.</p><p class="at">starts at 38.4 s</p></div></li>
+<li class="card"><img src="img/shot_30.jpg" width="640" height="341" loading="lazy" alt="Shot 30"><div class="meta"><div class="row"><strong>Shot 30</strong><span class="len">1.1 s</span></div><p>Neither is down. The shot holds on the two of them, still standing.</p><p class="at">starts at 38.9 s</p></div></li>
+</ul>
+
+<h2>Earlier version</h2>
+<p class="mut">The first pass at the same fight, for comparison. The current version reworks the story, the shot choices and the cameras.</p>
+<video controls playsinline preload="metadata" poster="img/poster_v1.jpg" src="media/v1.mp4">Your browser cannot play this video.</video>
+
+<h2>Earlier and current, one above the other</h2>
+<div class="vs"><video controls playsinline preload="metadata" poster="img/poster_vs.jpg" src="media/v1_vs_v2.mp4">Your browser cannot play this video.</video></div>
+
+<h2>Contact sheets</h2>
+<p class="mut">One frame per second of each version, labelled with the time in the clip. Current version:</p>
+<img class="sheet" src="img/sheet_current.jpg" width="2934" height="1121" loading="lazy" alt="Contact sheet of the current animation, one frame per second">
+<p class="mut">Earlier version:</p>
+<img class="sheet" src="img/sheet_earlier.jpg" width="2934" height="1121" loading="lazy" alt="Contact sheet of the earlier animation, one frame per second">
+</main>
+</body>
+</html>
